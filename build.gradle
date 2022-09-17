@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = 16
+targetCompatibility = 16
+
+group 'me.youded'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+jar{
+    manifest{
+        attributes("Main-Class": "me.youded.NativesPrepare.Main")
+        attributes("Agent-Class": "me.youded.NativesPrepare.Agent")
+        attributes("Premain-Class": "me.youded.NativesPrepare.Agent")
+        attributes("Can-Retransform-Classes": true)
+    }
+}
